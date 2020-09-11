@@ -1,0 +1,702 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif');
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0 auto;
+    background-color: #e9e9e2;
+    width: 90%;
+}
+
+h1{
+    font-size: 30px;
+    text-align: center;
+}
+
+h2{
+    font-size: 25px;
+    text-align: center;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header{
+    padding: 0.5em 0;
+    text-align: center;
+    float: left;
+    width: 100%;
+    background: #000000;
+    border-bottom: #FFD700 3px solid; 
+    color: white;
+    justify-content: center;
+    align-items: center;
+    max-height: 70px;
+}
+
+.hidden-brand{
+    display: none;
+}
+
+header h1{
+    float: left;
+    font-size: 35px;
+    padding-left: 100px;
+    padding-top: 5px;
+}
+
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding-right: 100px;
+    padding-top: 10px;
+    float: right;
+}
+
+ul .hidden{
+    float: none;
+}
+
+li{
+    display: inline-block;
+    float: left;
+    margin-right: 1px;
+}
+
+li a{
+    display: block;
+    min-width: 100px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: helvetica, sans-serif;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding-right: 5px;
+}
+
+li:hover a{
+    color: #FFD700;
+}
+
+
+li ul{
+    display: none;
+}
+
+li ul li{
+    display: block;
+    float: none;
+}
+
+li ul li a{
+    width: auto;
+    min-width: 100px;
+    padding: 0 20px;
+}
+
+ul li a:hover + .hidden, .hidden:hover{
+    display:block;
+}
+
+.show-menu{
+    font-family: helvetica, sans-serif;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    display: none;
+    font-size: 20px;
+    text-decoration: underline;
+}
+.show-menu:hover{
+    color: #FFD700;
+    cursor: pointer;
+}
+
+input[type=checkbox]{
+    display: none;
+}
+
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+
+nav h1{
+    position: relative;
+    top: -25px;
+}
+img{
+    max-width: 100%;
+}
+
+.portfolio{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+    padding: 1em;
+}
+
+.portfolio img{
+    width: 100%;
+    height: auto;
+    border-radius: 25px 25px 0 0;
+}
+
+.portfolio_item{
+    background: #333;
+    border-radius: 25px;
+}
+
+.portfolio_desc{
+    padding-top: 0px;
+    color: white;
+    margin-bottom: 0;
+    padding-bottom: 15px;
+}
+
+.portfolio_desc a{
+
+}
+
+.button{
+    background: #FFD700;
+    padding: 0;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    border-radius: 25px;
+    margin-left: 45px;
+}
+
+.portfolio_date{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 0;
+}
+
+.portfolio_lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0,1);
+    transform-origin: right;
+    transition: transform ease-in-out 500ms;
+}
+
+.portfolio_lightbox:target {
+    transform: scale(1,1);
+    transform-origin: left;
+}
+
+.portfolio-lightbox_content{
+    width: 900px;
+    background: black;
+    padding: 1em;
+    position: relative;
+}
+.portfolio-lightbox_content img{
+    min-width: 900px;
+    min-height: 400px;
+    max-width: 900px;
+    max-height: 400px;
+}
+
+.close{
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    background: #FFD700;
+    top: -1em;
+    right: -1em;
+    border-radius: 50%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close::after{
+    content: 'X  ';
+    color: black;
+    font-weight: 700;
+}
+footer{
+    padding: 20px;
+    margin-top: 20px;
+    color: #f4f4f4;
+    background: #000000;
+    text-align: center;
+    border-top: #FFD700 3px solid;
+}
+
+.portfolio{
+    margin-top: 15px;
+}
+
+.portfolio_item img{
+    min-height: 300px;
+    max-height: 300px;
+}
+@media(min-width: 768px){
+    .button{
+        margin-left: 120px;
+    }
+      
+}
+@media(max-width: 768px){
+    header h1{
+        float: left;
+        font-size: 35px;
+        padding-left: 50px;
+        padding-top: 5px;
+    }
+    ul{
+        list-style-type: none;
+        margin-top: -134px;
+        padding-right: 100px;
+        padding-top: 0;
+        float: right;
+    }
+    
+    
+    li{
+        display: inline-block;
+        float: left;
+        margin-right: 1px;
+        margin-top: 50px;
+    }
+    
+    li a{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: 2;
+        left: 0px;
+        margin-top: 100px;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-bottom: #FFD700 3px solid; 
+
+    }
+    ul{
+        display: none;
+    }
+
+    li{
+        margin-bottom: 1px;
+    }
+
+    ul li, li a{
+        width: 100%;
+    }
+
+    .show-menu{
+        width: 25%;
+        display: block;
+        float: right;
+        margin-right: 50px;
+        margin-top: 12px;
+    }
+
+    #show-menu{
+        margin-left: 1000px;
+    }
+
+    nav h1{
+        top: -25px;
+    }
+    body{
+        width: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .buttons button#next{
+        position: absolute;
+        top: 40%;
+        right: 25px;
+    }
+    
+    .buttons button#prev{
+        position: absolute;
+        top: 40%;
+        left: 25px;
+    }
+    footer{
+        position: end;
+        bottom: -200px;
+        width: 100%;
+    }
+    .portfolio{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+
+}
+@media (min-width: 410px) and (max-width:500px){
+    body{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .slide .content{
+        bottom: -300px;
+        left: 0;
+        width: 100%;
+    }
+    
+    .slide.current .content{
+        transform: translateY(-300px);
+    }
+    
+    #social h1, #social, #boxes .box img{
+        text-align: center;
+        width: 100%;
+        color: white;
+        display: block;
+    }
+    article#main-col, aside#sidebar{
+        color: black;
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+    
+    #contact{
+        
+    }
+     aside img{
+         position: relative;
+         right: 15px;
+         margin-top: 10px;
+     }
+    
+    
+    
+    #boxes .box{
+        float: none;
+        text-align: center;
+        width: 100%; 
+    }
+    #social a{
+        position: relative;
+        right: 7%;
+        text-align: center;
+        width: 10%;
+        margin: 5px;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    #boxes .box img{
+        position: relative;
+        top: 40px;
+        right: 100px;
+        width: 200px;
+        height: 200px;
+        padding-left: 170px;
+    }
+    .slider{
+        position: relative;
+        overflow: hidden;
+        height: 600px;
+        width: auto;
+    }
+    .buttons button#next{
+        position: absolute;
+        top: 40%;
+        right: 25px;
+    }
+    
+    .buttons button#prev{
+        position: absolute;
+        top: 40%;
+        left: 25px;
+    }
+    
+    .slider{
+        width: 100%;
+    }
+    
+    .hidden-brand{
+        display: block;
+        position: absolute;
+        color: white;
+        margin-left: 80px;
+        padding-top: 5px;
+        font-size: 35px;
+    }
+    
+    header{
+    min-height: 100px;
+    min-width: 100%;
+    }
+    
+    
+    header h1{
+      display: none;
+    }
+    
+    .show-menu{
+        margin-right: 156px;
+        margin-top: 50px;
+    }
+    
+    ul{
+        margin-top: -42px;
+    }
+    form{
+        display: none;
+    }
+    iframe{
+        position: block;
+        bottom: 10px;
+        z-index: 4;
+    }
+    
+    #main-col h1{
+    padding:0;
+    margin: 0;
+    }
+    
+    iframe{
+        width: 350px;
+        position: relative;
+        top: 200px;
+        height: 500px;
+        
+    }
+    .page-title{
+    }
+    
+    #contact{
+        position: relative;
+        width: 350px;
+        left: -40px;
+        top: -90px;
+        margin-right: 10px;
+        margin-bottom: 30px;
+    }
+    
+    footer{
+        position: relative;
+        width: 89%;
+        bottom: 0px;
+        margin-top: 120px;
+    }
+    
+    #main h1{
+        margin-top: 10px;
+    }
+    nav h1{
+        position: absolute;
+        left: -30px;
+    }
+    .portfolio{
+        grid-template-columns: 1fr;
+    }
+    .button{
+        margin-left: 111px;
+    }
+    .portfolio-lightbox_content{
+        width: 350px;
+    }
+    .portfolio-lightbox_content img{
+        min-width: 350px;
+        min-height: 400px;
+        max-width: 350px;
+        max-height: 400px;
+    }
+    }
+    @media(max-width: 409px){
+        body{
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .slide .content{
+            bottom: -300px;
+            left: 0;
+            width: 100%;
+        }
+    
+        .slide.current .content{
+            transform: translateY(-300px);
+        }
+    
+        #social h1, #social, #boxes .box img{
+            text-align: center;
+            width: 100%;
+            color: white;
+            display: block;
+        }
+        article#main-col, aside#sidebar{
+            color: black;
+            display: block;
+            text-align: center;
+            width: 100%;
+        }
+    
+        #contact{
+            
+        }
+         aside img{
+             position: relative;
+             right: 15px;
+             margin-top: 10px;
+         }
+        
+        
+    
+        #boxes .box{
+            float: none;
+            text-align: center;
+            width: 100%; 
+        }
+        #social a{
+            position: relative;
+            right: 7%;
+            text-align: center;
+            width: 10%;
+            margin: 5px;
+            justify-content: center;
+            align-items: center;
+    
+        }
+        #boxes .box img{
+            position: relative;
+            top: 40px;
+            right: 100px;
+            width: 200px;
+            height: 200px;
+            padding-left: 150px;
+        }
+        .slider{
+            position: relative;
+            overflow: hidden;
+            height: 600px;
+            width: auto;
+        }
+        .buttons button#next{
+            position: absolute;
+            top: 40%;
+            right: 25px;
+        }
+        
+        .buttons button#prev{
+            position: absolute;
+            top: 40%;
+            left: 25px;
+        }
+    
+        .slider{
+            width: 100%;
+        }
+    
+        .hidden-brand{
+            display: block;
+            position: absolute;
+            color: white;
+            margin-left: 50px;
+            padding-top: 5px;
+            font-size: 30px;
+        }
+    
+        header{
+        min-height: 100px;
+        min-width: 100%;
+        }
+        
+    
+        header h1{
+          display: none;
+        }
+    
+        .show-menu{
+            margin-right: 141px;
+            margin-top: 50px;
+        }
+    
+        ul{
+            margin-top: -141px;
+        }
+        form{
+            display: none;
+        }
+        iframe{
+            position: block;
+            bottom: 10px;
+            z-index: 4;
+        }
+    
+        #main-col h1{
+        padding:0;
+        margin: 0;
+        }
+        
+        iframe{
+            width: 350px;
+            position: relative;
+            top: 200px;
+            height: 500px;
+            
+        }
+        .page-title{
+        }
+        
+        #contact{
+            position: relative;
+            width: 350px;
+            left: -40px;
+            top: -90px;
+            margin-right: 10px;
+            margin-bottom: 30px;
+        }
+    
+        footer{
+            position: relative;
+            width: 89%;
+            bottom: 0px;
+            margin-top: 120px;
+        }
+    
+        #main h1{
+            margin-top: 10px;
+        }
+        nav h1{
+            position: absolute;
+            left: -30px;
+        }
+        .portfolio{
+            grid-template-columns: 1fr;
+        }
+        .button{
+            margin-left: 100px;
+        }
+        .portfolio-lightbox_content{
+            width: 300px;
+        }
+        .portfolio-lightbox_content img{
+            min-width: 300px;
+            min-height: 400px;
+            max-width: 300px;
+            max-height: 400px;
+        }
+        }
+    }
+    
